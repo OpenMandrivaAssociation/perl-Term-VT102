@@ -3,7 +3,7 @@
 Summary:	Term::VT102 - a class to emulate a DEC VT102 terminal
 Name:		perl-%{real_name}
 Version:	0.82
-Release: %mkrel 2
+Release: %mkrel 3
 License:	GPL or Artistic
 Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{real_name}
@@ -30,6 +30,8 @@ written on the screen by querying the class appropriately.
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 %make
+
+%check
 make test
 
 %install
