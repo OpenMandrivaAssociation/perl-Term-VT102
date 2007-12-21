@@ -10,6 +10,7 @@ URL:		http://search.cpan.org/dist/%{real_name}
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Term/%{real_name}-%{version}.tar.bz2
 BuildRequires:	perl-devel
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The VT102 class provides emulation of most of the functions of a
