@@ -1,16 +1,18 @@
-%define real_name Term-VT102
+%define upstream_name    Term-VT102
+%define upstream_version 0.91
+
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
 Summary:	Term::VT102 - a class to emulate a DEC VT102 terminal
-Name:		perl-%{real_name}
-Version:	0.91
-Release: %mkrel 1
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{real_name}
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Term/%{real_name}-%{version}.tar.bz2
-BuildRequires:	perl-devel
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Term/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 The VT102 class provides emulation of most of the functions of a
@@ -25,7 +27,7 @@ to a VT102 class. You can then see what the application has
 written on the screen by querying the class appropriately.
 
 %prep
-%setup -q -n %{real_name}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -49,4 +51,3 @@ rm -rf %{buildroot}
 %{perl_vendorlib}/Term/VT102.pm
 %{perl_vendorlib}/Term/VT102/examples/*
 %{_mandir}/*/*
-
