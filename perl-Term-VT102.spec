@@ -1,15 +1,13 @@
 %define upstream_name    Term-VT102
-%define upstream_version 0.91
-
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Version:	0.91
+Release:	5
 
 Summary:	Term::VT102 - a class to emulate a DEC VT102 terminal
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Term/%{upstream_name}-%{upstream_version}.tar.bz2
+Url:		https://metacpan.org/dist/%{upstream_name}
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Term/%{upstream_name}-%{version}.tar.bz2
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -28,7 +26,7 @@ to a VT102 class. You can then see what the application has
 written on the screen by querying the class appropriately.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -52,9 +50,7 @@ make test
 %changelog
 * Sat Aug 01 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 0.910.0-1mdv2010.0
 + Revision: 405544
-- rebuild using %%perl_convert_version
-
-* Mon Nov 10 2008 Guillaume Rousse <guillomovitch@mandriva.org> 0.91-1mdv2009.1
+- rebuild using %0.91 Mon Nov 10 2008 Guillaume Rousse <guillomovitch@mandriva.org> 0.91-1mdv2009.1
 + Revision: 301686
 - update to new version 0.91
 
